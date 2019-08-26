@@ -13,6 +13,8 @@ using System.Xml;
 using X7Renappo.Models;
 using iTextSharp;
 using iTextSharp.text;
+using System.Text;
+using System.Xml.Linq;
 
 namespace X7Renappo.Negocio
 {
@@ -29,7 +31,7 @@ namespace X7Renappo.Negocio
         {
             cuit = Funciones.ConvertToCUIT(cuit);
 
-            WebProxy proxy = Funciones.CrearProxy();
+            //WebProxy proxy = Funciones.CrearProxy();
 
             Certificacion[] certificaciones = new Certificacion[0];
             Proveedor proveedor = new Proveedor();
@@ -47,7 +49,7 @@ namespace X7Renappo.Negocio
             request.KeepAlive = true;
             request.PreAuthenticate = true;
             request.AuthenticationLevel = AuthenticationLevel.MutualAuthRequested;
-            request.Proxy = proxy;
+            //request.Proxy = proxy;
             request.Credentials = CredentialCache.DefaultCredentials;
 
             string content = string.Empty;
@@ -64,7 +66,7 @@ namespace X7Renappo.Negocio
 
                 certificaciones = JsonConvert.DeserializeObject<Certificacion[]>(content);
 
-                if(certificaciones != null && certificaciones.Any())
+                if (certificaciones != null && certificaciones.Any())
                 {
                     IT_Detalle detalle = new IT_Detalle();
                     List<IT_Actividad> actividades = new List<IT_Actividad>();
@@ -74,21 +76,41 @@ namespace X7Renappo.Negocio
                         detalle.RazonSocial = certificacion.RazonSocial;
                         detalle.Intermediario = certificacion.Medio;
                         detalle.Habilitado = certificacion.Habilitado;
-                        detalle.FechaVigenciaDesde = Funciones.ConvertToFechaFormato(Funciones.ConvertToFechaVigencia(certificacion.FechaVigencia, Parametros.FechaVigencia.Desde));
-                        detalle.FechaVigenciaHasta = Funciones.ConvertToFechaFormato(Funciones.ConvertToFechaVigencia(certificacion.FechaVigencia, Parametros.FechaVigencia.Hasta));
+                        detalle.FechaVigenciaDesde = Funciones.ConvertToFechaFormato(Funciones.ConvertToFechaVigencia(certificacion.FechaVigencia, Parametros.FechaVigencia.Desde), null);
+                        detalle.FechaVigenciaHasta = Funciones.ConvertToFechaFormato(Funciones.ConvertToFechaVigencia(certificacion.FechaVigencia, Parametros.FechaVigencia.Hasta), null);
                         detalle.Tarifario = certificacion.Tarifario;
                         detalle.CoberturaGeografica = certificacion.CoberturaGeografica;
 
-                        var actividad = new IT_Actividad();
-                        actividad.Actividad = "Comercio";
-                        actividad.Fecha = Funciones.ConvertToFechaFormato(Funciones.ConvertToFechaVigencia(certificacion.FechaVigencia, Parametros.FechaVigencia.Desde));
-                        actividad.Vencimiento = Funciones.ConvertToFechaFormato(Funciones.ConvertToFechaVigencia(certificacion.FechaVigencia, Parametros.FechaVigencia.Hasta));
+                        if (!string.IsNullOrEmpty(certificacion.Certificado))
+                        {
+                            //XmlDocument nose = new XmlDocument();                            
 
-                        actividades.Add(actividad);
+                            //nose.LoadXml(certificacion.Certificado);
+
+                            var elementos = XElement.Parse(certificacion.Certificado);
+
+                            if (elementos.HasElements)
+                            {
+                                foreach (var elemento in elementos.Elements())
+                                {
+                                    var elementosTexto = elemento.Descendants()?.Where(x => x.FirstNode != null && x.FirstNode.NodeType == XmlNodeType.Text);
+
+                                    var actividad = new IT_Actividad();
+                                    actividad.Actividad = elementosTexto?.FirstOrDefault(x => x.Parent.Value.Contains("CERTIFICADO HABILITANTE") && x.Name == "strong").Value;
+                                    actividad.Fecha = Funciones.ConvertToFechaFormato(elementosTexto?.FirstOrDefault(x => x.Value.Contains("Fecha:"))?.Value, "Fecha:");
+                                    actividad.Vencimiento = Funciones.ConvertToFechaFormato(elementosTexto?.FirstOrDefault(x => x.Value.Contains("Vencimiento:"))?.Value, "Vencimiento:");
+                                    actividad.Certificado = elementosTexto?.FirstOrDefault(x => x.Value.Contains("RENAPPO")).Value.Trim();
+
+                                    actividades.Add(actividad);
+                                }
+                            }
+
+                        }
+
                     }
 
                     proveedor.Detalle = detalle;
-                    proveedor.Actividad = actividades.ToArray();
+                    proveedor.Actividades = actividades.ToArray();
                 }
 
             }
@@ -305,7 +327,7 @@ namespace X7Renappo.Negocio
 
         public SoapException manejoError(Exception ex, string Username, string Metodo)
         {
-            log.Error("Error "+Metodo +": "+ex.Message);
+            log.Error("Error " + Metodo + ": " + ex.Message);
 
             // Build the detail element of the SOAP fault.
             System.Xml.XmlDocument doc = new System.Xml.XmlDocument();
@@ -325,7 +347,7 @@ namespace X7Renappo.Negocio
             return se;
         }
         public static bool RemoteCertificateValidationCallback(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
-        {            
+        {
             return true;
         }
     }

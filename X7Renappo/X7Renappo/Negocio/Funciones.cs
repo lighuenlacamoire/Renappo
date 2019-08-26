@@ -94,8 +94,14 @@ namespace X7Renappo.Negocio
             }
         }
 
-        public static string ConvertToFechaFormato(string fecha)
+        public static string ConvertToFechaFormato(string fecha, string reemplazar)
         {
+            if (!string.IsNullOrEmpty(fecha) && !string.IsNullOrEmpty(reemplazar))
+            {
+                fecha = fecha.Replace(reemplazar, "");
+                fecha = fecha.Trim();
+            }
+
             if (!string.IsNullOrEmpty(fecha) && Parametros.FormatoFecha.IsMatch(fecha))
             {
                 var parts = fecha.Split('-');

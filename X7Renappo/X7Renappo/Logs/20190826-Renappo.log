@@ -1,0 +1,498 @@
+2019-08-26 14:18:48,501 [9] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 14:19:40,314 [9] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <consultarPadronResponse xmlns="https://anses.gov.ar/ws/renappo">
+      <consultarPadronResult>
+        <Detalle>
+          <RazonSocial>VÍA PUBLICA CLAN S.A.</RazonSocial>
+          <Intermediario>CLAN</Intermediario>
+          <Habilitado>Si</Habilitado>
+          <FechaVigenciaDesde>25/06/2019</FechaVigenciaDesde>
+          <FechaVigenciaHasta>22/12/2019</FechaVigenciaHasta>
+          <Tarifario>https://renappo.argentina.gob.ar/apiAnses/data/docs/5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf-v1.pdf</Tarifario>
+          <CoberturaGeografica>https://renappo.argentina.gob.ar/apiAnses/data/docs/587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf-v1.pdf</CoberturaGeografica>
+        </Detalle>
+        <Actividad>
+          <IT_Actividad>
+            <Actividad>Comercio</Actividad>
+            <Fecha>25/06/2019</Fecha>
+            <Vencimiento>22/12/2019</Vencimiento>
+          </IT_Actividad>
+        </Actividad>
+      </consultarPadronResult>
+    </consultarPadronResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-26 14:28:22,813 [6] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 14:28:29,531 [6] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <consultarPadronResponse xmlns="https://anses.gov.ar/ws/renappo">
+      <consultarPadronResult>
+        <Detalle>
+          <RazonSocial>VÍA PUBLICA CLAN S.A.</RazonSocial>
+          <Intermediario>CLAN</Intermediario>
+          <Habilitado>Si</Habilitado>
+          <FechaVigenciaDesde>25/06/2019</FechaVigenciaDesde>
+          <FechaVigenciaHasta>22/12/2019</FechaVigenciaHasta>
+          <Tarifario>https://renappo.argentina.gob.ar/apiAnses/data/docs/5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf-v1.pdf</Tarifario>
+          <CoberturaGeografica>https://renappo.argentina.gob.ar/apiAnses/data/docs/587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf-v1.pdf</CoberturaGeografica>
+        </Detalle>
+        <Actividad>
+          <IT_Actividad>
+            <Actividad>&lt;pdf Author="Secretaria de Comunicacion Publica - Direccion Legales" Title="Certificado 30-59895662-2"&gt;
+        &lt;page page-size="a4-landscape"&gt;
+        &lt;div border-size="1.7mm" height="178mm" font-size="20px" border-color="#4f81bd" padding-left="3mm" padding-right="3mm"&gt;
+            &lt;img text-align="center" src="%MediosRenappoBundle:img/renappo-header-pdf.png%" margin-left="2mm" margin-top="1mm" width="100%" /&gt;
+
+            &lt;div text-align="center" height="15mm"&gt;CERTIFICADO HABILITANTE - Actividad: &lt;strong&gt;MEDIOS&lt;/strong&gt;&lt;/div&gt;
+
+            &lt;div text-align="justify"&gt;
+                De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-
+            &lt;/div&gt;
+
+            &lt;div text-align="center" height="10mm"&gt;&lt;/div&gt;
+
+            &lt;div float="left" width="120mm"&gt;
+                &lt;div&gt;
+                    Fecha: 2019-06-25
+                &lt;/div&gt;
+                &lt;div&gt;
+                    Vencimiento: 2019-12-22
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div float="left" width="100mm"&gt;
+                &lt;img text-align="center" src="%MediosRenappoBundle:img/FirmaDirector.png%" margin-top="1mm" width="35mm"/&gt;
+            &lt;/div&gt;
+
+            &lt;div float="left" width="45mm"&gt;
+                &lt;img text-align="right" src="/tmp/Y522Ra.png"/&gt;
+            &lt;/div&gt;
+
+
+        &lt;/div&gt;
+    &lt;/page&gt;
+        &lt;page page-size="a4-landscape"&gt;
+        &lt;div border-size="1.7mm" height="178mm" font-size="20px" border-color="#4f81bd" padding-left="3mm" padding-right="3mm"&gt;
+            &lt;img text-align="center" src="%MediosRenappoBundle:img/renappo-header-pdf.png%" margin-left="2mm" margin-top="1mm" width="100%" /&gt;
+
+            &lt;div text-align="center" height="15mm"&gt;CERTIFICADO HABILITANTE - Actividad: &lt;strong&gt;COMERCIALIZADORA&lt;/strong&gt;&lt;/div&gt;
+
+            &lt;div text-align="justify"&gt;
+                De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-
+            &lt;/div&gt;
+
+            &lt;div text-align="center" height="10mm"&gt;&lt;/div&gt;
+
+            &lt;div float="left" width="120mm"&gt;
+                &lt;div&gt;
+                    Fecha: 2019-06-25
+                &lt;/div&gt;
+                &lt;div&gt;
+                    Vencimiento: 2019-12-22
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div float="left" width="100mm"&gt;
+                &lt;img text-align="center" src="%MediosRenappoBundle:img/FirmaDirector.png%" margin-top="1mm" width="35mm"/&gt;
+            &lt;/div&gt;
+
+            &lt;div float="left" width="45mm"&gt;
+                &lt;img text-align="right" src="/tmp/tRtvHF.png"/&gt;
+            &lt;/div&gt;
+
+
+        &lt;/div&gt;
+    &lt;/page&gt;
+        
+&lt;/pdf&gt;
+</Actividad>
+            <Fecha>25/06/2019</Fecha>
+            <Vencimiento>22/12/2019</Vencimiento>
+          </IT_Actividad>
+        </Actividad>
+      </consultarPadronResult>
+    </consultarPadronResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-26 14:38:12,865 [9] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 14:38:20,872 [9] ERROR obtenerCertificado [(null)] - Error consultarPadron: XmlNodeConverter can only convert JSON that begins with an object. Path '[0].certificado', line 1, position 3765.
+2019-08-26 14:38:20,873 [9] ERROR obtenerCertificado [(null)] - consultarPadron
+Newtonsoft.Json.JsonSerializationException: XmlNodeConverter can only convert JSON that begins with an object. Path '[0].certificado', line 1, position 3765.
+   en Newtonsoft.Json.Converters.XmlNodeConverter.ReadJson(JsonReader reader, Type objectType, Object existingValue, JsonSerializer serializer)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.DeserializeConvertable(JsonConverter converter, JsonReader reader, Type objectType, Object existingValue)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty containerProperty, String id)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   en Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   en Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   en Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   en Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   en Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en D:\LIGHUEN\GIT\Renappo\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 65
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en D:\LIGHUEN\GIT\Renappo\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+2019-08-26 14:39:19,487 [11] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 14:44:34,049 [10] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 14:54:49,227 [6] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 14:59:08,161 [6] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 15:19:16,321 [9] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 15:35:05,404 [5] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 15:43:20,910 [7] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 15:54:02,138 [9] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 15:58:52,891 [10] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 16:06:10,781 [7] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 16:12:49,547 [10] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 16:24:38,195 [7] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 16:26:25,227 [6] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 16:26:56,166 [6] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <consultarPadronResponse xmlns="https://anses.gov.ar/ws/renappo">
+      <consultarPadronResult>
+        <Detalle>
+          <RazonSocial>VÍA PUBLICA CLAN S.A.</RazonSocial>
+          <Intermediario>CLAN</Intermediario>
+          <Habilitado>Si</Habilitado>
+          <FechaVigenciaDesde>25/06/2019</FechaVigenciaDesde>
+          <FechaVigenciaHasta>22/12/2019</FechaVigenciaHasta>
+          <Tarifario>https://renappo.argentina.gob.ar/apiAnses/data/docs/5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf-v1.pdf</Tarifario>
+          <CoberturaGeografica>https://renappo.argentina.gob.ar/apiAnses/data/docs/587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf-v1.pdf</CoberturaGeografica>
+        </Detalle>
+        <Actividad>
+          <IT_Actividad>
+            <Actividad>MEDIOS</Actividad>
+            <Fecha> 2019-06-25</Fecha>
+            <Vencimiento> 2019-12-22</Vencimiento>
+            <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+          </IT_Actividad>
+          <IT_Actividad>
+            <Actividad>COMERCIALIZADORA</Actividad>
+            <Fecha> 2019-06-25</Fecha>
+            <Vencimiento> 2019-12-22</Vencimiento>
+            <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+          </IT_Actividad>
+        </Actividad>
+      </consultarPadronResult>
+    </consultarPadronResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-26 16:29:58,574 [9] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 16:30:07,189 [9] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <consultarPadronResponse xmlns="https://anses.gov.ar/ws/renappo">
+      <consultarPadronResult>
+        <IT_Detalle>
+          <RazonSocial>VÍA PUBLICA CLAN S.A.</RazonSocial>
+          <Intermediario>CLAN</Intermediario>
+          <Habilitado>Si</Habilitado>
+          <FechaVigenciaDesde>25/06/2019</FechaVigenciaDesde>
+          <FechaVigenciaHasta>22/12/2019</FechaVigenciaHasta>
+          <Tarifario>https://renappo.argentina.gob.ar/apiAnses/data/docs/5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf-v1.pdf</Tarifario>
+          <CoberturaGeografica>https://renappo.argentina.gob.ar/apiAnses/data/docs/587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf-v1.pdf</CoberturaGeografica>
+        </IT_Detalle>
+        <IT_Actividad>
+          <Actividad>MEDIOS</Actividad>
+          <Fecha> 2019-06-25</Fecha>
+          <Vencimiento> 2019-12-22</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+        <IT_Actividad>
+          <Actividad>COMERCIALIZADORA</Actividad>
+          <Fecha> 2019-06-25</Fecha>
+          <Vencimiento> 2019-12-22</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+      </consultarPadronResult>
+    </consultarPadronResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-26 16:31:00,372 [10] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 16:32:06,451 [10] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 16:32:18,354 [10] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <consultarPadronResponse xmlns="https://anses.gov.ar/ws/renappo">
+      <consultarPadronResult>
+        <IT_Detalle>
+          <RazonSocial>VÍA PUBLICA CLAN S.A.</RazonSocial>
+          <Intermediario>CLAN</Intermediario>
+          <Habilitado>Si</Habilitado>
+          <FechaVigenciaDesde>25/06/2019</FechaVigenciaDesde>
+          <FechaVigenciaHasta>22/12/2019</FechaVigenciaHasta>
+          <Tarifario>https://renappo.argentina.gob.ar/apiAnses/data/docs/5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf-v1.pdf</Tarifario>
+          <CoberturaGeografica>https://renappo.argentina.gob.ar/apiAnses/data/docs/587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf-v1.pdf</CoberturaGeografica>
+        </IT_Detalle>
+        <IT_Actividad>
+          <Actividad>MEDIOS</Actividad>
+          <Fecha>25/06/2019</Fecha>
+          <Vencimiento>22/12/2019</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+        <IT_Actividad>
+          <Actividad>COMERCIALIZADORA</Actividad>
+          <Fecha>25/06/2019</Fecha>
+          <Vencimiento>22/12/2019</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+      </consultarPadronResult>
+    </consultarPadronResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-26 16:34:24,548 [10] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-26 16:34:37,704 [10] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <consultarPadronResponse xmlns="https://anses.gov.ar/ws/renappo">
+      <consultarPadronResult>
+        <IT_Detalle>
+          <RazonSocial>VÍA PUBLICA CLAN S.A.</RazonSocial>
+          <Intermediario>CLAN</Intermediario>
+          <Habilitado>Si</Habilitado>
+          <FechaVigenciaDesde>25/06/2019</FechaVigenciaDesde>
+          <FechaVigenciaHasta>22/12/2019</FechaVigenciaHasta>
+          <Tarifario>https://renappo.argentina.gob.ar/apiAnses/data/docs/5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf-v1.pdf</Tarifario>
+          <CoberturaGeografica>https://renappo.argentina.gob.ar/apiAnses/data/docs/587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf-v1.pdf</CoberturaGeografica>
+        </IT_Detalle>
+        <IT_Actividad>
+          <Actividad>MEDIOS</Actividad>
+          <Fecha>25/06/2019</Fecha>
+          <Vencimiento>22/12/2019</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+        <IT_Actividad>
+          <Actividad>COMERCIALIZADORA</Actividad>
+          <Fecha>25/06/2019</Fecha>
+          <Vencimiento>22/12/2019</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+      </consultarPadronResult>
+    </consultarPadronResponse>
+  </soap:Body>
+</soap:Envelope>
