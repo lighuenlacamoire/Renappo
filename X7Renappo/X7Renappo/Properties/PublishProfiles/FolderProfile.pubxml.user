@@ -79,10 +79,25 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>08/26/2019 10:40:10</publishTime>
+      <publishTime>08/26/2019 16:49:24</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>08/26/2019 10:40:09</publishTime>
+      <publishTime>08/26/2019 16:49:23</publishTime>
+    </File>
+    <File Include="bin/BouncyCastle.Crypto.dll">
+      <publishTime>08/17/2017 18:20:54</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.Core.dll">
+      <publishTime>08/16/2017 06:51:46</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.Core.pdb">
+      <publishTime>08/16/2017 06:51:46</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.dll">
+      <publishTime>08/16/2017 06:51:42</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.pdb">
+      <publishTime>08/16/2017 06:51:42</publishTime>
     </File>
     <File Include="bin/es/System.Net.Http.Formatting.resources.dll">
       <publishTime>02/01/2018 12:17:28</publishTime>
@@ -113,6 +128,9 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     </File>
     <File Include="bin/es/System.Web.WebPages.resources.dll">
       <publishTime>02/01/2018 12:21:06</publishTime>
+    </File>
+    <File Include="bin/itextsharp.dll">
+      <publishTime>01/22/2018 18:40:38</publishTime>
     </File>
     <File Include="bin/log4net.dll">
       <publishTime>03/08/2017 19:26:22</publishTime>
@@ -238,13 +256,13 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/23/2014 13:57:34</publishTime>
     </File>
     <File Include="bin/X7Renappo.dll">
-      <publishTime>08/26/2019 10:39:41</publishTime>
+      <publishTime>08/26/2019 16:48:48</publishTime>
     </File>
     <File Include="bin/X7Renappo.pdb">
-      <publishTime>08/26/2019 10:39:41</publishTime>
+      <publishTime>08/26/2019 16:48:48</publishTime>
     </File>
     <File Include="bin/X7Renappo.XmlSerializers.dll">
-      <publishTime>08/26/2019 10:39:47</publishTime>
+      <publishTime>08/26/2019 16:48:56</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>07/26/2019 12:37:55</publishTime>
@@ -253,7 +271,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>07/26/2019 12:51:05</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>08/26/2019 10:40:03</publishTime>
+      <publishTime>08/26/2019 16:49:07</publishTime>
     </File>
     <File Include="Web References/DigiWeb/EDocumento.datasource">
       <publishTime>08/22/2019 13:22:11</publishTime>
@@ -271,7 +289,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/22/2019 13:22:11</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/26/2019 10:02:01</publishTime>
+      <publishTime>08/26/2019 16:48:59</publishTime>
     </File>
     <File Include="X7CPRenappo.asmx">
       <publishTime>08/22/2019 16:59:53</publishTime>

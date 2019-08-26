@@ -74,3 +74,13 @@ C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\obj\Release\X7Renappo.csproj.CopyComplete
 C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\obj\Release\X7Renappo.dll
 C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\obj\Release\X7Renappo.pdb
 C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\obj\Release\X7Renappo.XmlSerializers.dll
+C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\bin\BouncyCastle.Crypto.dll
+C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\bin\Common.Logging.Core.dll
+C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\bin\Common.Logging.dll
+C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\bin\itextsharp.dll
+C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\bin\BouncyCastle.Crypto.xml
+C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\bin\Common.Logging.pdb
+C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\bin\Common.Logging.xml
+C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\bin\Common.Logging.Core.pdb
+C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\bin\Common.Logging.Core.xml
+C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\bin\itextsharp.xml

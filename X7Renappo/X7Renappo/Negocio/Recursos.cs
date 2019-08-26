@@ -31,7 +31,7 @@ namespace X7Renappo.Negocio
         {
             cuit = Funciones.ConvertToCUIT(cuit);
 
-            //WebProxy proxy = Funciones.CrearProxy();
+            WebProxy proxy = Funciones.CrearProxy();
 
             Certificacion[] certificaciones = new Certificacion[0];
             Proveedor proveedor = new Proveedor();
@@ -49,7 +49,7 @@ namespace X7Renappo.Negocio
             request.KeepAlive = true;
             request.PreAuthenticate = true;
             request.AuthenticationLevel = AuthenticationLevel.MutualAuthRequested;
-            //request.Proxy = proxy;
+            request.Proxy = proxy;
             request.Credentials = CredentialCache.DefaultCredentials;
 
             string content = string.Empty;
@@ -83,10 +83,6 @@ namespace X7Renappo.Negocio
 
                         if (!string.IsNullOrEmpty(certificacion.Certificado))
                         {
-                            //XmlDocument nose = new XmlDocument();                            
-
-                            //nose.LoadXml(certificacion.Certificado);
-
                             var elementos = XElement.Parse(certificacion.Certificado);
 
                             if (elementos.HasElements)
@@ -104,9 +100,7 @@ namespace X7Renappo.Negocio
                                     actividades.Add(actividad);
                                 }
                             }
-
                         }
-
                     }
 
                     proveedor.Detalle = detalle;
