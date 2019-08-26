@@ -1,0 +1,18 @@
+2019-08-23 11:58:10,212 [28] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-23 11:58:31,868 [28] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <consultarPadronResponse xmlns="https://anses.gov.ar/ws/renappo">
+      <consultarPadronResult />
+    </consultarPadronResponse>
+  </soap:Body>
+</soap:Envelope>
