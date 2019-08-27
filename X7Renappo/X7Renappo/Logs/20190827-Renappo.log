@@ -1,0 +1,1689 @@
+2019-08-27 10:35:41,596 [7] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-27 10:36:18,644 [7] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>3W-SERVPUB</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:36:19,063 [7] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:36:26,722 [7] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>c01613e2-49d4-4762-9154-c41691d8a321</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T10:36:26.2872124-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:36:26,907 [7] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:36:45,833 [7] ERROR obtenerCertificado [(null)] - Error consultarPadron: No se admite el formato proporcionado de la ruta de acceso.
+2019-08-27 10:36:45,843 [7] ERROR obtenerCertificado [(null)] - consultarPadron
+System.NotSupportedException: No se admite el formato proporcionado de la ruta de acceso.
+   en System.Security.Permissions.FileIOPermission.EmulateFileIOPermissionChecks(String fullPath)
+   en System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   en System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   en System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   en X7Renappo.Negocio.Recursos.UploadFile(String url) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 216
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 82
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+2019-08-27 10:36:46,484 [7] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>System.Web.Services.Protocols.SoapException: Error ---&gt; System.NotSupportedException: No se admite el formato proporcionado de la ruta de acceso.
+   en System.Security.Permissions.FileIOPermission.EmulateFileIOPermissionChecks(String fullPath)
+   en System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   en System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   en System.IO.File.InternalReadAllBytes(String path, Boolean checkHost)
+   en X7Renappo.Negocio.Recursos.UploadFile(String url) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 216
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 82
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 33</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:38:35,036 [18] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-27 10:38:44,331 [18] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>3W-SERVPUB</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:38:44,398 [18] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:38:44,410 [18] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>c06f058e-ebf9-4a66-9f19-5360dbc34152</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T10:38:44.4062124-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:38:44,545 [18] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:40:13,393 [18] ERROR obtenerCertificado [(null)] - Error consultarPadron: No es posible conectar con el servidor remoto
+2019-08-27 10:40:13,394 [18] ERROR obtenerCertificado [(null)] - consultarPadron
+System.Exception: No es posible conectar con el servidor remoto
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+2019-08-27 10:40:16,045 [18] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>System.Web.Services.Protocols.SoapException: Error ---&gt; System.Exception: No es posible conectar con el servidor remoto
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 33</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:40:19,809 [13] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-27 10:40:25,398 [13] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>3W-SERVPUB</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:40:25,462 [13] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:40:25,463 [13] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>f33d1cdc-4996-4494-b6f0-ce49261f6bce</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T10:40:25.4632124-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:40:25,584 [13] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:41:51,994 [13] ERROR obtenerCertificado [(null)] - Error consultarPadron: No es posible conectar con el servidor remoto
+2019-08-27 10:41:52,058 [13] ERROR obtenerCertificado [(null)] - consultarPadron
+System.Exception: No es posible conectar con el servidor remoto
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+2019-08-27 10:41:52,060 [13] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>System.Web.Services.Protocols.SoapException: Error ---&gt; System.Exception: No es posible conectar con el servidor remoto
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 33</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:43:39,539 [7] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-27 10:45:50,931 [7] ERROR obtenerCertificado [(null)] - Error consultarPadron: <html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" type="text/css" href="https://ansescaars.anses.gov.ar:4143/bootstrap.min.css">
+    <title>Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas.</title>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:#3cade7">
+            <div class="navbar-header page-scroll" >
+                                                <img src="https://ansescaars.anses.gov.ar:4143/banner.png"></img>
+                                                </div>
+    </nav>
+    <section class=" my-container">
+        <div class="container">
+            <div class="row">
+                    <div class="panel panel-red"style="margin-top:200px">
+                        <div class="panel-heading" style="background-color:#EB5562;color:#fff">
+                            <strong>- ACCESO DENEGADO -</strong>
+                        </div>
+                        <div class="panel-body">
+                            <p><b>USER_DAPC</b>, el acceso a la página web <strong style="color:#EB5562;">renappo.argentina.gob.ar</strong> requiere Acceso a Internet.</p>
+							<p><b>Code Error:</b> 0x009ZR</p>
+                        </div>
+                        <div class="panel-footer">
+							<p style="font-size:15px">Si Ud. considera que este sitio es necesario para su desempeño laboral, envíenos la correspondiente justificación a través de un correo electrónico haciendo click <a href='mailto:mesadeayudadgiit@anses.gov.ar?subject=Sitio Web con Acceso Restringido en BluecoatSG-01 - 10.1.20.79 &body=Se denego el acceso al sitio renappo.argentina.gob.ar al usuario USER_DAPC el día 2019-08-27 - 13:44:02 (GMT). %0D%0D%0DInformacion Tecnica%0D-----------------------------%0DNOMBRE DEL PROXY: BluecoatSG-01 - 10.1.20.79.%0DMOTIVO DE ERROR: Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas..%0DUSER-NAME: USER_DAPC.%0DDIRECCION IP: 10.86.31.83.%0DURL: renappo.argentina.gob.ar.%0DCATEGORIA: sitios_DomainUsers;Sitios_Internet_Restringido;Sitios_GPO_Presta_descentrali_UDAT;Lista_GOV_GOB_AR;Sitios_Control_Prestacional;Sitios_Presta_DG;Government&#x2F;Legal.%0DFECHA: 2019-08-27 - 13:44:02 (GMT)%0D%0DCODIGO: 0x009ZR' style="text-decoration: none"><strong>Aquí</strong></a></p>
+                            <p style="font-size:15px">Recuerde que se encuentra vigente la norma "Uso de Correo Electrónico, Internet y Mensajería Instantánea" <a href="http://intranetanses/archivos/manuales_procedimientos/normas/SIST-06-02.pdf" style="text-decoration:none"><strong>(Ver norma en formato pdf)</strong></a></p>
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                <div class=" col-lg-12 ">
+            </div>
+            </div>
+        </div>
+    </section>
+    <footer class="text-center">
+        <div class="footer-below" style="background-color:#FFF">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12" style="color: #005496">
+                        <strong>Dirección de Seguridad Informática | ANSES</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+2019-08-27 10:45:50,932 [7] ERROR obtenerCertificado [(null)] - consultarPadron
+System.Exception: <html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" type="text/css" href="https://ansescaars.anses.gov.ar:4143/bootstrap.min.css">
+    <title>Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas.</title>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:#3cade7">
+            <div class="navbar-header page-scroll" >
+                                                <img src="https://ansescaars.anses.gov.ar:4143/banner.png"></img>
+                                                </div>
+    </nav>
+    <section class=" my-container">
+        <div class="container">
+            <div class="row">
+                    <div class="panel panel-red"style="margin-top:200px">
+                        <div class="panel-heading" style="background-color:#EB5562;color:#fff">
+                            <strong>- ACCESO DENEGADO -</strong>
+                        </div>
+                        <div class="panel-body">
+                            <p><b>USER_DAPC</b>, el acceso a la página web <strong style="color:#EB5562;">renappo.argentina.gob.ar</strong> requiere Acceso a Internet.</p>
+							<p><b>Code Error:</b> 0x009ZR</p>
+                        </div>
+                        <div class="panel-footer">
+							<p style="font-size:15px">Si Ud. considera que este sitio es necesario para su desempeño laboral, envíenos la correspondiente justificación a través de un correo electrónico haciendo click <a href='mailto:mesadeayudadgiit@anses.gov.ar?subject=Sitio Web con Acceso Restringido en BluecoatSG-01 - 10.1.20.79 &body=Se denego el acceso al sitio renappo.argentina.gob.ar al usuario USER_DAPC el día 2019-08-27 - 13:44:02 (GMT). %0D%0D%0DInformacion Tecnica%0D-----------------------------%0DNOMBRE DEL PROXY: BluecoatSG-01 - 10.1.20.79.%0DMOTIVO DE ERROR: Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas..%0DUSER-NAME: USER_DAPC.%0DDIRECCION IP: 10.86.31.83.%0DURL: renappo.argentina.gob.ar.%0DCATEGORIA: sitios_DomainUsers;Sitios_Internet_Restringido;Sitios_GPO_Presta_descentrali_UDAT;Lista_GOV_GOB_AR;Sitios_Control_Prestacional;Sitios_Presta_DG;Government&#x2F;Legal.%0DFECHA: 2019-08-27 - 13:44:02 (GMT)%0D%0DCODIGO: 0x009ZR' style="text-decoration: none"><strong>Aquí</strong></a></p>
+                            <p style="font-size:15px">Recuerde que se encuentra vigente la norma "Uso de Correo Electrónico, Internet y Mensajería Instantánea" <a href="http://intranetanses/archivos/manuales_procedimientos/normas/SIST-06-02.pdf" style="text-decoration:none"><strong>(Ver norma en formato pdf)</strong></a></p>
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                <div class=" col-lg-12 ">
+            </div>
+            </div>
+        </div>
+    </section>
+    <footer class="text-center">
+        <div class="footer-below" style="background-color:#FFF">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12" style="color: #005496">
+                        <strong>Dirección de Seguridad Informática | ANSES</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+2019-08-27 10:45:54,179 [7] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>System.Web.Services.Protocols.SoapException: Error ---&gt; System.Exception: &lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                &lt;link rel="stylesheet" type="text/css" href="https://ansescaars.anses.gov.ar:4143/bootstrap.min.css"&gt;
+    &lt;title&gt;Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas.&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav class="navbar navbar-default navbar-fixed-top" style="background-color:#3cade7"&gt;
+            &lt;div class="navbar-header page-scroll" &gt;
+                                                &lt;img src="https://ansescaars.anses.gov.ar:4143/banner.png"&gt;&lt;/img&gt;
+                                                &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;section class=" my-container"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="row"&gt;
+                    &lt;div class="panel panel-red"style="margin-top:200px"&gt;
+                        &lt;div class="panel-heading" style="background-color:#EB5562;color:#fff"&gt;
+                            &lt;strong&gt;- ACCESO DENEGADO -&lt;/strong&gt;
+                        &lt;/div&gt;
+                        &lt;div class="panel-body"&gt;
+                            &lt;p&gt;&lt;b&gt;USER_DAPC&lt;/b&gt;, el acceso a la página web &lt;strong style="color:#EB5562;"&gt;renappo.argentina.gob.ar&lt;/strong&gt; requiere Acceso a Internet.&lt;/p&gt;
+							&lt;p&gt;&lt;b&gt;Code Error:&lt;/b&gt; 0x009ZR&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class="panel-footer"&gt;
+							&lt;p style="font-size:15px"&gt;Si Ud. considera que este sitio es necesario para su desempeño laboral, envíenos la correspondiente justificación a través de un correo electrónico haciendo click &lt;a href='mailto:mesadeayudadgiit@anses.gov.ar?subject=Sitio Web con Acceso Restringido en BluecoatSG-01 - 10.1.20.79 &amp;body=Se denego el acceso al sitio renappo.argentina.gob.ar al usuario USER_DAPC el día 2019-08-27 - 13:44:02 (GMT). %0D%0D%0DInformacion Tecnica%0D-----------------------------%0DNOMBRE DEL PROXY: BluecoatSG-01 - 10.1.20.79.%0DMOTIVO DE ERROR: Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas..%0DUSER-NAME: USER_DAPC.%0DDIRECCION IP: 10.86.31.83.%0DURL: renappo.argentina.gob.ar.%0DCATEGORIA: sitios_DomainUsers;Sitios_Internet_Restringido;Sitios_GPO_Presta_descentrali_UDAT;Lista_GOV_GOB_AR;Sitios_Control_Prestacional;Sitios_Presta_DG;Government&amp;#x2F;Legal.%0DFECHA: 2019-08-27 - 13:44:02 (GMT)%0D%0DCODIGO: 0x009ZR' style="text-decoration: none"&gt;&lt;strong&gt;Aquí&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+                            &lt;p style="font-size:15px"&gt;Recuerde que se encuentra vigente la norma "Uso de Correo Electrónico, Internet y Mensajería Instantánea" &lt;a href="http://intranetanses/archivos/manuales_procedimientos/normas/SIST-06-02.pdf" style="text-decoration:none"&gt;&lt;strong&gt;(Ver norma en formato pdf)&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;div class=" col-lg-12 "&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;footer class="text-center"&gt;
+        &lt;div class="footer-below" style="background-color:#FFF"&gt;
+            &lt;div class="container"&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-lg-12" style="color: #005496"&gt;
+                        &lt;strong&gt;Dirección de Seguridad Informática | ANSES&lt;/strong&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 33</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:45:58,307 [11] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-27 10:46:09,445 [11] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>3W-SERVPUB</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:46:09,514 [11] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:46:09,526 [11] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>57e13088-2b2c-458a-95b3-03dd79fd6eee</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T10:46:09.5212124-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:46:09,642 [11] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:48:14,072 [11] ERROR obtenerCertificado [(null)] - Error consultarPadron: No es posible conectar con el servidor remoto
+2019-08-27 10:48:14,073 [11] ERROR obtenerCertificado [(null)] - consultarPadron
+System.Exception: No es posible conectar con el servidor remoto
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+2019-08-27 10:48:15,629 [11] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>System.Web.Services.Protocols.SoapException: Error ---&gt; System.Exception: No es posible conectar con el servidor remoto
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 33</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:52:30,048 [28] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-27 10:52:39,504 [28] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>3W-SERVPUB</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:52:39,901 [28] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:52:39,913 [28] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>fc73be63-c72f-44d2-b4b7-01123e0cb3ae</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T10:52:39.9082124-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:52:40,081 [28] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:52:55,864 [28] ERROR obtenerCertificado [(null)] - Error consultarPadron: Una operación asincrónica no se puede comenzar en este momento. Solo se pueden comenzar operaciones asincrónicas dentro de un controlador o módulo asincrónico o durante ciertos eventos en el ciclo de vida de la página. Si esta excepción se produjo mientras se ejecutaba una página, asegúrese de que la página esté marcada con <%@ Page Async="true" %>. Esta excepción puede también indicar que se intentó llamar a un método "async void" que generalmente no es compatible con el procesamiento de solicitudes de ASP.NET. En su lugar, el método asincrónico debería devolver una Tarea y el llamador debería esperarla.
+2019-08-27 10:52:55,865 [28] ERROR obtenerCertificado [(null)] - consultarPadron
+System.InvalidOperationException: Una operación asincrónica no se puede comenzar en este momento. Solo se pueden comenzar operaciones asincrónicas dentro de un controlador o módulo asincrónico o durante ciertos eventos en el ciclo de vida de la página. Si esta excepción se produjo mientras se ejecutaba una página, asegúrese de que la página esté marcada con <%@ Page Async="true" %>. Esta excepción puede también indicar que se intentó llamar a un método "async void" que generalmente no es compatible con el procesamiento de solicitudes de ASP.NET. En su lugar, el método asincrónico debería devolver una Tarea y el llamador debería esperarla.
+   en System.Web.AspNetSynchronizationContext.OperationStarted()
+   en System.Net.WebClient.DownloadFileAsync(Uri address, String fileName, Object userToken)
+   en X7Renappo.Negocio.Recursos.UploadFile(String url) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 218
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 82
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+2019-08-27 10:52:55,870 [28] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>System.Web.Services.Protocols.SoapException: Error ---&gt; System.InvalidOperationException: Una operación asincrónica no se puede comenzar en este momento. Solo se pueden comenzar operaciones asincrónicas dentro de un controlador o módulo asincrónico o durante ciertos eventos en el ciclo de vida de la página. Si esta excepción se produjo mientras se ejecutaba una página, asegúrese de que la página esté marcada con &lt;%@ Page Async="true" %&gt;. Esta excepción puede también indicar que se intentó llamar a un método "async void" que generalmente no es compatible con el procesamiento de solicitudes de ASP.NET. En su lugar, el método asincrónico debería devolver una Tarea y el llamador debería esperarla.
+   en System.Web.AspNetSynchronizationContext.OperationStarted()
+   en System.Net.WebClient.DownloadFileAsync(Uri address, String fileName, Object userToken)
+   en X7Renappo.Negocio.Recursos.UploadFile(String url) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 218
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 82
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 33</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:54:17,535 [28] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-27 10:54:24,641 [28] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>3W-SERVPUB</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:54:24,716 [28] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:54:24,727 [28] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>078e111f-fba0-4efe-b3e5-ec2f455f9e98</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T10:54:24.7232124-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 10:54:24,883 [28] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 11:34:14,822 [28] ERROR obtenerCertificado [(null)] - Error consultarPadron: No es posible conectar con el servidor remoto
+2019-08-27 11:34:14,822 [28] ERROR obtenerCertificado [(null)] - consultarPadron
+System.Exception: No es posible conectar con el servidor remoto
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+2019-08-27 11:34:14,826 [28] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>System.Web.Services.Protocols.SoapException: Error ---&gt; System.Exception: No es posible conectar con el servidor remoto
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 33</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 11:57:25,432 [6] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-27 11:59:05,679 [6] ERROR obtenerCertificado [(null)] - Error consultarPadron: No es posible conectar con el servidor remoto
+2019-08-27 11:59:05,699 [6] ERROR obtenerCertificado [(null)] - consultarPadron
+System.Exception: No es posible conectar con el servidor remoto
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+2019-08-27 11:59:06,165 [6] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>System.Web.Services.Protocols.SoapException: Error ---&gt; System.Exception: No es posible conectar con el servidor remoto
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 33</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:01:05,808 [6] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-27 12:01:26,973 [6] ERROR obtenerCertificado [(null)] - Error consultarPadron: <html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" type="text/css" href="https://ansescaars.anses.gov.ar:4143/bootstrap.min.css">
+    <title>Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas.</title>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:#3cade7">
+            <div class="navbar-header page-scroll" >
+                                                <img src="https://ansescaars.anses.gov.ar:4143/banner.png"></img>
+                                                </div>
+    </nav>
+    <section class=" my-container">
+        <div class="container">
+            <div class="row">
+                    <div class="panel panel-red"style="margin-top:200px">
+                        <div class="panel-heading" style="background-color:#EB5562;color:#fff">
+                            <strong>- ACCESO DENEGADO -</strong>
+                        </div>
+                        <div class="panel-body">
+                            <p><b>USER_DAPC</b>, el acceso a la página web <strong style="color:#EB5562;">renappo.argentina.gob.ar</strong> requiere Acceso a Internet.</p>
+							<p><b>Code Error:</b> 0x009ZR</p>
+                        </div>
+                        <div class="panel-footer">
+							<p style="font-size:15px">Si Ud. considera que este sitio es necesario para su desempeño laboral, envíenos la correspondiente justificación a través de un correo electrónico haciendo click <a href='mailto:mesadeayudadgiit@anses.gov.ar?subject=Sitio Web con Acceso Restringido en BluecoatSG-01 - 10.1.20.79 &body=Se denego el acceso al sitio renappo.argentina.gob.ar al usuario USER_DAPC el día 2019-08-27 - 15:01:27 (GMT). %0D%0D%0DInformacion Tecnica%0D-----------------------------%0DNOMBRE DEL PROXY: BluecoatSG-01 - 10.1.20.79.%0DMOTIVO DE ERROR: Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas..%0DUSER-NAME: USER_DAPC.%0DDIRECCION IP: 10.86.31.83.%0DURL: renappo.argentina.gob.ar.%0DCATEGORIA: sitios_DomainUsers;Sitios_Internet_Restringido;Sitios_GPO_Presta_descentrali_UDAT;Lista_GOV_GOB_AR;Sitios_Control_Prestacional;Sitios_Presta_DG;Government&#x2F;Legal.%0DFECHA: 2019-08-27 - 15:01:27 (GMT)%0D%0DCODIGO: 0x009ZR' style="text-decoration: none"><strong>Aquí</strong></a></p>
+                            <p style="font-size:15px">Recuerde que se encuentra vigente la norma "Uso de Correo Electrónico, Internet y Mensajería Instantánea" <a href="http://intranetanses/archivos/manuales_procedimientos/normas/SIST-06-02.pdf" style="text-decoration:none"><strong>(Ver norma en formato pdf)</strong></a></p>
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                <div class=" col-lg-12 ">
+            </div>
+            </div>
+        </div>
+    </section>
+    <footer class="text-center">
+        <div class="footer-below" style="background-color:#FFF">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12" style="color: #005496">
+                        <strong>Dirección de Seguridad Informática | ANSES</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+2019-08-27 12:01:26,973 [6] ERROR obtenerCertificado [(null)] - consultarPadron
+System.Exception: <html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" type="text/css" href="https://ansescaars.anses.gov.ar:4143/bootstrap.min.css">
+    <title>Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas.</title>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:#3cade7">
+            <div class="navbar-header page-scroll" >
+                                                <img src="https://ansescaars.anses.gov.ar:4143/banner.png"></img>
+                                                </div>
+    </nav>
+    <section class=" my-container">
+        <div class="container">
+            <div class="row">
+                    <div class="panel panel-red"style="margin-top:200px">
+                        <div class="panel-heading" style="background-color:#EB5562;color:#fff">
+                            <strong>- ACCESO DENEGADO -</strong>
+                        </div>
+                        <div class="panel-body">
+                            <p><b>USER_DAPC</b>, el acceso a la página web <strong style="color:#EB5562;">renappo.argentina.gob.ar</strong> requiere Acceso a Internet.</p>
+							<p><b>Code Error:</b> 0x009ZR</p>
+                        </div>
+                        <div class="panel-footer">
+							<p style="font-size:15px">Si Ud. considera que este sitio es necesario para su desempeño laboral, envíenos la correspondiente justificación a través de un correo electrónico haciendo click <a href='mailto:mesadeayudadgiit@anses.gov.ar?subject=Sitio Web con Acceso Restringido en BluecoatSG-01 - 10.1.20.79 &body=Se denego el acceso al sitio renappo.argentina.gob.ar al usuario USER_DAPC el día 2019-08-27 - 15:01:27 (GMT). %0D%0D%0DInformacion Tecnica%0D-----------------------------%0DNOMBRE DEL PROXY: BluecoatSG-01 - 10.1.20.79.%0DMOTIVO DE ERROR: Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas..%0DUSER-NAME: USER_DAPC.%0DDIRECCION IP: 10.86.31.83.%0DURL: renappo.argentina.gob.ar.%0DCATEGORIA: sitios_DomainUsers;Sitios_Internet_Restringido;Sitios_GPO_Presta_descentrali_UDAT;Lista_GOV_GOB_AR;Sitios_Control_Prestacional;Sitios_Presta_DG;Government&#x2F;Legal.%0DFECHA: 2019-08-27 - 15:01:27 (GMT)%0D%0DCODIGO: 0x009ZR' style="text-decoration: none"><strong>Aquí</strong></a></p>
+                            <p style="font-size:15px">Recuerde que se encuentra vigente la norma "Uso de Correo Electrónico, Internet y Mensajería Instantánea" <a href="http://intranetanses/archivos/manuales_procedimientos/normas/SIST-06-02.pdf" style="text-decoration:none"><strong>(Ver norma en formato pdf)</strong></a></p>
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                <div class=" col-lg-12 ">
+            </div>
+            </div>
+        </div>
+    </section>
+    <footer class="text-center">
+        <div class="footer-below" style="background-color:#FFF">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12" style="color: #005496">
+                        <strong>Dirección de Seguridad Informática | ANSES</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+2019-08-27 12:02:03,481 [6] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>System.Web.Services.Protocols.SoapException: Error ---&gt; System.Exception: &lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                &lt;link rel="stylesheet" type="text/css" href="https://ansescaars.anses.gov.ar:4143/bootstrap.min.css"&gt;
+    &lt;title&gt;Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas.&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav class="navbar navbar-default navbar-fixed-top" style="background-color:#3cade7"&gt;
+            &lt;div class="navbar-header page-scroll" &gt;
+                                                &lt;img src="https://ansescaars.anses.gov.ar:4143/banner.png"&gt;&lt;/img&gt;
+                                                &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;section class=" my-container"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="row"&gt;
+                    &lt;div class="panel panel-red"style="margin-top:200px"&gt;
+                        &lt;div class="panel-heading" style="background-color:#EB5562;color:#fff"&gt;
+                            &lt;strong&gt;- ACCESO DENEGADO -&lt;/strong&gt;
+                        &lt;/div&gt;
+                        &lt;div class="panel-body"&gt;
+                            &lt;p&gt;&lt;b&gt;USER_DAPC&lt;/b&gt;, el acceso a la página web &lt;strong style="color:#EB5562;"&gt;renappo.argentina.gob.ar&lt;/strong&gt; requiere Acceso a Internet.&lt;/p&gt;
+							&lt;p&gt;&lt;b&gt;Code Error:&lt;/b&gt; 0x009ZR&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class="panel-footer"&gt;
+							&lt;p style="font-size:15px"&gt;Si Ud. considera que este sitio es necesario para su desempeño laboral, envíenos la correspondiente justificación a través de un correo electrónico haciendo click &lt;a href='mailto:mesadeayudadgiit@anses.gov.ar?subject=Sitio Web con Acceso Restringido en BluecoatSG-01 - 10.1.20.79 &amp;body=Se denego el acceso al sitio renappo.argentina.gob.ar al usuario USER_DAPC el día 2019-08-27 - 15:01:27 (GMT). %0D%0D%0DInformacion Tecnica%0D-----------------------------%0DNOMBRE DEL PROXY: BluecoatSG-01 - 10.1.20.79.%0DMOTIVO DE ERROR: Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas..%0DUSER-NAME: USER_DAPC.%0DDIRECCION IP: 10.86.31.83.%0DURL: renappo.argentina.gob.ar.%0DCATEGORIA: sitios_DomainUsers;Sitios_Internet_Restringido;Sitios_GPO_Presta_descentrali_UDAT;Lista_GOV_GOB_AR;Sitios_Control_Prestacional;Sitios_Presta_DG;Government&amp;#x2F;Legal.%0DFECHA: 2019-08-27 - 15:01:27 (GMT)%0D%0DCODIGO: 0x009ZR' style="text-decoration: none"&gt;&lt;strong&gt;Aquí&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+                            &lt;p style="font-size:15px"&gt;Recuerde que se encuentra vigente la norma "Uso de Correo Electrónico, Internet y Mensajería Instantánea" &lt;a href="http://intranetanses/archivos/manuales_procedimientos/normas/SIST-06-02.pdf" style="text-decoration:none"&gt;&lt;strong&gt;(Ver norma en formato pdf)&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;div class=" col-lg-12 "&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;footer class="text-center"&gt;
+        &lt;div class="footer-below" style="background-color:#FFF"&gt;
+            &lt;div class="container"&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-lg-12" style="color: #005496"&gt;
+                        &lt;strong&gt;Dirección de Seguridad Informática | ANSES&lt;/strong&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 33</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:04:16,430 [9] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-27 12:04:50,905 [9] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>3W-SERVPUB</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:04:50,928 [9] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:04:50,966 [9] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>c4785110-c65a-4352-989a-2984cb662919</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T12:04:50.9512124-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:04:51,031 [9] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:05:12,275 [9] ERROR obtenerCertificado [(null)] - Error consultarPadron: No es posible conectar con el servidor remoto
+2019-08-27 12:05:12,276 [9] ERROR obtenerCertificado [(null)] - consultarPadron
+System.Exception: No es posible conectar con el servidor remoto
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+2019-08-27 12:05:12,282 [9] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>System.Web.Services.Protocols.SoapException: Error ---&gt; System.Exception: No es posible conectar con el servidor remoto
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 33</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:18:59,811 [9] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-27 12:19:19,892 [9] ERROR obtenerCertificado [(null)] - Error consultarPadron: <html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" type="text/css" href="https://ansescaars.anses.gov.ar:4143/bootstrap.min.css">
+    <title>Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas.</title>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:#3cade7">
+            <div class="navbar-header page-scroll" >
+                                                <img src="https://ansescaars.anses.gov.ar:4143/banner.png"></img>
+                                                </div>
+    </nav>
+    <section class=" my-container">
+        <div class="container">
+            <div class="row">
+                    <div class="panel panel-red"style="margin-top:200px">
+                        <div class="panel-heading" style="background-color:#EB5562;color:#fff">
+                            <strong>- ACCESO DENEGADO -</strong>
+                        </div>
+                        <div class="panel-body">
+                            <p><b>USER_DAPC</b>, el acceso a la página web <strong style="color:#EB5562;">renappo.argentina.gob.ar</strong> requiere Acceso a Internet.</p>
+							<p><b>Code Error:</b> 0x009ZR</p>
+                        </div>
+                        <div class="panel-footer">
+							<p style="font-size:15px">Si Ud. considera que este sitio es necesario para su desempeño laboral, envíenos la correspondiente justificación a través de un correo electrónico haciendo click <a href='mailto:mesadeayudadgiit@anses.gov.ar?subject=Sitio Web con Acceso Restringido en BluecoatSG-02 - 10.1.20.78 &body=Se denego el acceso al sitio renappo.argentina.gob.ar al usuario USER_DAPC el día 2019-08-27 - 15:19:19 (GMT). %0D%0D%0DInformacion Tecnica%0D-----------------------------%0DNOMBRE DEL PROXY: BluecoatSG-02 - 10.1.20.78.%0DMOTIVO DE ERROR: Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas..%0DUSER-NAME: USER_DAPC.%0DDIRECCION IP: 10.86.31.83.%0DURL: renappo.argentina.gob.ar.%0DCATEGORIA: sitios_DomainUsers;Sitios_Internet_Restringido;Sitios_GPO_Presta_descentrali_UDAT;Lista_GOV_GOB_AR;Sitios_Control_Prestacional;Sitios_Presta_DG;Government&#x2F;Legal.%0DFECHA: 2019-08-27 - 15:19:19 (GMT)%0D%0DCODIGO: 0x009ZR' style="text-decoration: none"><strong>Aquí</strong></a></p>
+                            <p style="font-size:15px">Recuerde que se encuentra vigente la norma "Uso de Correo Electrónico, Internet y Mensajería Instantánea" <a href="http://intranetanses/archivos/manuales_procedimientos/normas/SIST-06-02.pdf" style="text-decoration:none"><strong>(Ver norma en formato pdf)</strong></a></p>
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                <div class=" col-lg-12 ">
+            </div>
+            </div>
+        </div>
+    </section>
+    <footer class="text-center">
+        <div class="footer-below" style="background-color:#FFF">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12" style="color: #005496">
+                        <strong>Dirección de Seguridad Informática | ANSES</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+2019-08-27 12:19:19,893 [9] ERROR obtenerCertificado [(null)] - consultarPadron
+System.Exception: <html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" type="text/css" href="https://ansescaars.anses.gov.ar:4143/bootstrap.min.css">
+    <title>Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas.</title>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" style="background-color:#3cade7">
+            <div class="navbar-header page-scroll" >
+                                                <img src="https://ansescaars.anses.gov.ar:4143/banner.png"></img>
+                                                </div>
+    </nav>
+    <section class=" my-container">
+        <div class="container">
+            <div class="row">
+                    <div class="panel panel-red"style="margin-top:200px">
+                        <div class="panel-heading" style="background-color:#EB5562;color:#fff">
+                            <strong>- ACCESO DENEGADO -</strong>
+                        </div>
+                        <div class="panel-body">
+                            <p><b>USER_DAPC</b>, el acceso a la página web <strong style="color:#EB5562;">renappo.argentina.gob.ar</strong> requiere Acceso a Internet.</p>
+							<p><b>Code Error:</b> 0x009ZR</p>
+                        </div>
+                        <div class="panel-footer">
+							<p style="font-size:15px">Si Ud. considera que este sitio es necesario para su desempeño laboral, envíenos la correspondiente justificación a través de un correo electrónico haciendo click <a href='mailto:mesadeayudadgiit@anses.gov.ar?subject=Sitio Web con Acceso Restringido en BluecoatSG-02 - 10.1.20.78 &body=Se denego el acceso al sitio renappo.argentina.gob.ar al usuario USER_DAPC el día 2019-08-27 - 15:19:19 (GMT). %0D%0D%0DInformacion Tecnica%0D-----------------------------%0DNOMBRE DEL PROXY: BluecoatSG-02 - 10.1.20.78.%0DMOTIVO DE ERROR: Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas..%0DUSER-NAME: USER_DAPC.%0DDIRECCION IP: 10.86.31.83.%0DURL: renappo.argentina.gob.ar.%0DCATEGORIA: sitios_DomainUsers;Sitios_Internet_Restringido;Sitios_GPO_Presta_descentrali_UDAT;Lista_GOV_GOB_AR;Sitios_Control_Prestacional;Sitios_Presta_DG;Government&#x2F;Legal.%0DFECHA: 2019-08-27 - 15:19:19 (GMT)%0D%0DCODIGO: 0x009ZR' style="text-decoration: none"><strong>Aquí</strong></a></p>
+                            <p style="font-size:15px">Recuerde que se encuentra vigente la norma "Uso de Correo Electrónico, Internet y Mensajería Instantánea" <a href="http://intranetanses/archivos/manuales_procedimientos/normas/SIST-06-02.pdf" style="text-decoration:none"><strong>(Ver norma en formato pdf)</strong></a></p>
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                <div class=" col-lg-12 ">
+            </div>
+            </div>
+        </div>
+    </section>
+    <footer class="text-center">
+        <div class="footer-below" style="background-color:#FFF">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12" style="color: #005496">
+                        <strong>Dirección de Seguridad Informática | ANSES</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+2019-08-27 12:22:14,287 [9] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>System.Web.Services.Protocols.SoapException: Error ---&gt; System.Exception: &lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+                &lt;link rel="stylesheet" type="text/css" href="https://ansescaars.anses.gov.ar:4143/bootstrap.min.css"&gt;
+    &lt;title&gt;Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas.&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;nav class="navbar navbar-default navbar-fixed-top" style="background-color:#3cade7"&gt;
+            &lt;div class="navbar-header page-scroll" &gt;
+                                                &lt;img src="https://ansescaars.anses.gov.ar:4143/banner.png"&gt;&lt;/img&gt;
+                                                &lt;/div&gt;
+    &lt;/nav&gt;
+    &lt;section class=" my-container"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="row"&gt;
+                    &lt;div class="panel panel-red"style="margin-top:200px"&gt;
+                        &lt;div class="panel-heading" style="background-color:#EB5562;color:#fff"&gt;
+                            &lt;strong&gt;- ACCESO DENEGADO -&lt;/strong&gt;
+                        &lt;/div&gt;
+                        &lt;div class="panel-body"&gt;
+                            &lt;p&gt;&lt;b&gt;USER_DAPC&lt;/b&gt;, el acceso a la página web &lt;strong style="color:#EB5562;"&gt;renappo.argentina.gob.ar&lt;/strong&gt; requiere Acceso a Internet.&lt;/p&gt;
+							&lt;p&gt;&lt;b&gt;Code Error:&lt;/b&gt; 0x009ZR&lt;/p&gt;
+                        &lt;/div&gt;
+                        &lt;div class="panel-footer"&gt;
+							&lt;p style="font-size:15px"&gt;Si Ud. considera que este sitio es necesario para su desempeño laboral, envíenos la correspondiente justificación a través de un correo electrónico haciendo click &lt;a href='mailto:mesadeayudadgiit@anses.gov.ar?subject=Sitio Web con Acceso Restringido en BluecoatSG-02 - 10.1.20.78 &amp;body=Se denego el acceso al sitio renappo.argentina.gob.ar al usuario USER_DAPC el día 2019-08-27 - 15:19:19 (GMT). %0D%0D%0DInformacion Tecnica%0D-----------------------------%0DNOMBRE DEL PROXY: BluecoatSG-02 - 10.1.20.78.%0DMOTIVO DE ERROR: Sus credenciales, no pudieron ser validadas: "General authentication failure due to bad user ID or authentication token.". El acceso no sera permitido hasta que las credenciales sean validadas..%0DUSER-NAME: USER_DAPC.%0DDIRECCION IP: 10.86.31.83.%0DURL: renappo.argentina.gob.ar.%0DCATEGORIA: sitios_DomainUsers;Sitios_Internet_Restringido;Sitios_GPO_Presta_descentrali_UDAT;Lista_GOV_GOB_AR;Sitios_Control_Prestacional;Sitios_Presta_DG;Government&amp;#x2F;Legal.%0DFECHA: 2019-08-27 - 15:19:19 (GMT)%0D%0DCODIGO: 0x009ZR' style="text-decoration: none"&gt;&lt;strong&gt;Aquí&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+                            &lt;p style="font-size:15px"&gt;Recuerde que se encuentra vigente la norma "Uso de Correo Electrónico, Internet y Mensajería Instantánea" &lt;a href="http://intranetanses/archivos/manuales_procedimientos/normas/SIST-06-02.pdf" style="text-decoration:none"&gt;&lt;strong&gt;(Ver norma en formato pdf)&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;div class=" col-lg-12 "&gt;
+            &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;footer class="text-center"&gt;
+        &lt;div class="footer-below" style="background-color:#FFF"&gt;
+            &lt;div class="container"&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-lg-12" style="color: #005496"&gt;
+                        &lt;strong&gt;Dirección de Seguridad Informática | ANSES&lt;/strong&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+   en X7Renappo.Negocio.Recursos.consultarPadron(String cuit) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\Negocio\Recursos.cs:línea 129
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 29
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en X7Renappo.X7CPRenappo.consultarPadron(String CUIT) en C:\LIGHUEN\RENAPPO\X7Renappo\X7Renappo\X7CPRenappo.asmx.cs:línea 33</faultstring>
+      <detail />
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:22:18,046 [9] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-27 12:22:30,724 [9] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>3W-SERVPUB</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:22:30,813 [9] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:22:30,838 [9] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>0b723c11-eb63-4ae6-86bd-9ebc97a7b1a1</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T12:22:30.8202124-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:22:30,994 [9] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:23:04,760 [9] DEBUG obtenerCertificado [(null)] - AltaFectura.ascx.cs - UploadFile() - pasó actualizar/guardar documento - antes de service.TraerEDocumento: oGuid_A_Traer: 0b723c11-eb63-4ae6-86bd-9ebc97a7b1a1
+2019-08-27 12:23:07,920 [9] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumento xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documentoId>0b723c11-eb63-4ae6-86bd-9ebc97a7b1a1</documentoId>
+    </TraerEDocumento>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:23:08,013 [9] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumentoResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <TraerEDocumentoResult>
+        <Id>0b723c11-eb63-4ae6-86bd-9ebc97a7b1a1</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>000</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>00000000</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\ANSESDIGI\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T12:22:31.047</FechaIndexacion>
+        <Hash />
+      </TraerEDocumentoResult>
+    </TraerEDocumentoResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:24:06,458 [9] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>3W-SERVPUB</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:24:06,477 [9] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:24:06,482 [9] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>af83359f-81e6-4363-8ac7-cca00369683e</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T12:24:06.4822124-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:24:06,562 [9] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:24:07,134 [9] DEBUG obtenerCertificado [(null)] - AltaFectura.ascx.cs - UploadFile() - pasó actualizar/guardar documento - antes de service.TraerEDocumento: oGuid_A_Traer: af83359f-81e6-4363-8ac7-cca00369683e
+2019-08-27 12:24:07,134 [9] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumento xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documentoId>af83359f-81e6-4363-8ac7-cca00369683e</documentoId>
+    </TraerEDocumento>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:24:07,145 [9] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumentoResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <TraerEDocumentoResult>
+        <Id>af83359f-81e6-4363-8ac7-cca00369683e</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>000</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>00000000</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Nombre>
+        <Ruta>\\ANSESDIGI\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T12:24:06.677</FechaIndexacion>
+        <Hash />
+      </TraerEDocumentoResult>
+    </TraerEDocumentoResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 12:24:07,249 [9] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <consultarPadronResponse xmlns="https://anses.gov.ar/ws/renappo">
+      <consultarPadronResult>
+        <IT_Detalle>
+          <RazonSocial>VÍA PUBLICA CLAN S.A.</RazonSocial>
+          <Intermediario>CLAN</Intermediario>
+          <Habilitado>Si</Habilitado>
+          <FechaVigenciaDesde>25/06/2019</FechaVigenciaDesde>
+          <FechaVigenciaHasta>22/12/2019</FechaVigenciaHasta>
+          <Tarifario>https://renappo.argentina.gob.ar/apiAnses/data/docs/5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf-v1.pdf</Tarifario>
+          <CoberturaGeografica>https://renappo.argentina.gob.ar/apiAnses/data/docs/587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf-v1.pdf</CoberturaGeografica>
+        </IT_Detalle>
+        <IT_Actividad>
+          <Actividad>MEDIOS</Actividad>
+          <Fecha>25/06/2019</Fecha>
+          <Vencimiento>22/12/2019</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+        <IT_Actividad>
+          <Actividad>COMERCIALIZADORA</Actividad>
+          <Fecha>25/06/2019</Fecha>
+          <Vencimiento>22/12/2019</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+      </consultarPadronResult>
+    </consultarPadronResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:47:54,617 [12] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-27 14:48:58,926 [12] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>3W-SERVPUB</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:48:59,320 [12] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:49:22,162 [12] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>126124cc-b0cc-4b0c-9abb-71a620407b7d</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T14:49:05.0912124-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:49:22,321 [12] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:49:33,590 [12] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumento xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documentoId>126124cc-b0cc-4b0c-9abb-71a620407b7d</documentoId>
+    </TraerEDocumento>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:49:33,686 [12] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumentoResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <TraerEDocumentoResult>
+        <Id>126124cc-b0cc-4b0c-9abb-71a620407b7d</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>000</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>00000000</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\ANSESDIGI\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T14:49:23.15</FechaIndexacion>
+        <Hash />
+      </TraerEDocumentoResult>
+    </TraerEDocumentoResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:50:42,826 [12] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>3W-SERVPUB</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:50:42,906 [12] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:50:43,593 [12] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>d2f4de8f-63d3-413e-8f07-6a571678d0f2</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T14:50:43.5912124-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:50:43,694 [12] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:50:44,702 [12] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumento xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documentoId>d2f4de8f-63d3-413e-8f07-6a571678d0f2</documentoId>
+    </TraerEDocumento>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:50:44,804 [12] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumentoResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <TraerEDocumentoResult>
+        <Id>d2f4de8f-63d3-413e-8f07-6a571678d0f2</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>000</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>00000000</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Nombre>
+        <Ruta>\\ANSESDIGI\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T14:50:44.583</FechaIndexacion>
+        <Hash />
+      </TraerEDocumentoResult>
+    </TraerEDocumentoResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:50:48,268 [12] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <consultarPadronResponse xmlns="https://anses.gov.ar/ws/renappo">
+      <consultarPadronResult>
+        <IT_Detalle>
+          <RazonSocial>VÍA PUBLICA CLAN S.A.</RazonSocial>
+          <Intermediario>CLAN</Intermediario>
+          <Habilitado>Si</Habilitado>
+          <FechaVigenciaDesde>25/06/2019</FechaVigenciaDesde>
+          <FechaVigenciaHasta>22/12/2019</FechaVigenciaHasta>
+          <Tarifario>126124cc-b0cc-4b0c-9abb-71a620407b7d</Tarifario>
+          <CoberturaGeografica>d2f4de8f-63d3-413e-8f07-6a571678d0f2</CoberturaGeografica>
+        </IT_Detalle>
+        <IT_Actividad>
+          <Actividad>MEDIOS</Actividad>
+          <Fecha>25/06/2019</Fecha>
+          <Vencimiento>22/12/2019</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+        <IT_Actividad>
+          <Actividad>COMERCIALIZADORA</Actividad>
+          <Fecha>25/06/2019</Fecha>
+          <Vencimiento>22/12/2019</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+      </consultarPadronResult>
+    </consultarPadronResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:51:49,056 [16] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-27 14:51:54,927 [16] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>3W-SERVPUB</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:51:55,005 [16] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:51:55,526 [16] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>971e2c7f-a5fe-4aac-8aa3-299b9a90d746</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T14:51:55.5112124-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:51:55,661 [16] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:51:56,305 [16] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumento xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documentoId>971e2c7f-a5fe-4aac-8aa3-299b9a90d746</documentoId>
+    </TraerEDocumento>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:51:56,369 [16] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumentoResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <TraerEDocumentoResult>
+        <Id>971e2c7f-a5fe-4aac-8aa3-299b9a90d746</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>000</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>00000000</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\ANSESDIGI\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T14:51:56.517</FechaIndexacion>
+        <Hash />
+      </TraerEDocumentoResult>
+    </TraerEDocumentoResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:51:56,658 [16] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>3W-SERVPUB</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:51:56,725 [16] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:51:57,213 [16] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>a81d1d84-3bfd-42a8-b42a-5825e2cb4c6f</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T14:51:57.2122124-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:51:57,351 [16] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:51:57,807 [16] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumento xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documentoId>a81d1d84-3bfd-42a8-b42a-5825e2cb4c6f</documentoId>
+    </TraerEDocumento>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:51:57,890 [16] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumentoResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <TraerEDocumentoResult>
+        <Id>a81d1d84-3bfd-42a8-b42a-5825e2cb4c6f</Id>
+        <CodigoSistema>3W-SERVPUB</CodigoSistema>
+        <TipoEDocumentoId>1054</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>000</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>00000000</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <Nombre>587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Nombre>
+        <Ruta>\\ANSESDIGI\ARQNAS\PDFs\3W-SERVPUB\2019\08\27\587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Ruta>
+        <FechaIndexacion>2019-08-27T14:51:58.2</FechaIndexacion>
+        <Hash />
+      </TraerEDocumentoResult>
+    </TraerEDocumentoResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-27 14:51:59,641 [16] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <consultarPadronResponse xmlns="https://anses.gov.ar/ws/renappo">
+      <consultarPadronResult>
+        <IT_Detalle>
+          <RazonSocial>VÍA PUBLICA CLAN S.A.</RazonSocial>
+          <Intermediario>CLAN</Intermediario>
+          <Habilitado>Si</Habilitado>
+          <FechaVigenciaDesde>25/06/2019</FechaVigenciaDesde>
+          <FechaVigenciaHasta>22/12/2019</FechaVigenciaHasta>
+          <Tarifario>971e2c7f-a5fe-4aac-8aa3-299b9a90d746</Tarifario>
+          <CoberturaGeografica>a81d1d84-3bfd-42a8-b42a-5825e2cb4c6f</CoberturaGeografica>
+        </IT_Detalle>
+        <IT_Actividad>
+          <Actividad>MEDIOS</Actividad>
+          <Fecha>25/06/2019</Fecha>
+          <Vencimiento>22/12/2019</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+        <IT_Actividad>
+          <Actividad>COMERCIALIZADORA</Actividad>
+          <Fecha>25/06/2019</Fecha>
+          <Vencimiento>22/12/2019</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+      </consultarPadronResult>
+    </consultarPadronResponse>
+  </soap:Body>
+</soap:Envelope>

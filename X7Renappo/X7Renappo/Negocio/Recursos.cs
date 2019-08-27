@@ -1,20 +1,21 @@
-﻿using log4net;
+﻿using iTextSharp;
+using iTextSharp.text;
+using log4net;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Web;
 using System.Web.Services.Protocols;
 using System.Xml;
-using X7Renappo.Models;
-using iTextSharp;
-using iTextSharp.text;
-using System.Text;
 using System.Xml.Linq;
+using X7Renappo.Models;
 
 namespace X7Renappo.Negocio
 {
@@ -78,8 +79,9 @@ namespace X7Renappo.Negocio
                         detalle.Habilitado = certificacion.Habilitado;
                         detalle.FechaVigenciaDesde = Funciones.ConvertToFechaFormato(Funciones.ConvertToFechaVigencia(certificacion.FechaVigencia, Parametros.FechaVigencia.Desde), null);
                         detalle.FechaVigenciaHasta = Funciones.ConvertToFechaFormato(Funciones.ConvertToFechaVigencia(certificacion.FechaVigencia, Parametros.FechaVigencia.Hasta), null);
-                        detalle.Tarifario = certificacion.Tarifario;
-                        detalle.CoberturaGeografica = certificacion.CoberturaGeografica;
+
+                        detalle.Tarifario = SubirArchivo(certificacion.Tarifario);
+                        detalle.CoberturaGeografica = SubirArchivo(certificacion.CoberturaGeografica);
 
                         if (!string.IsNullOrEmpty(certificacion.Certificado))
                         {
@@ -127,38 +129,91 @@ namespace X7Renappo.Negocio
             }
 
             return proveedor;
+        }
+        
+        private string SubirArchivo(string url)
+        {
+            string Id = string.Empty;
+            try
+            {
+                string digiwebEndpoint = ConfigurationManager.AppSettings["DigiWebEndpoint"];
+                string systemCode = ConfigurationManager.AppSettings["SystemCode"];
 
-            //using (var client = new HttpClient())
-            //{
-            //    //Passing service base url  
-            //    client.BaseAddress = new Uri("https://renappo.argentina.gob.ar");
+                DigiWeb.DigitalizacionServicio service = new DigiWeb.DigitalizacionServicio();
+                service.Credentials = CredentialCache.DefaultCredentials;
+                service.Url = digiwebEndpoint;
 
-            //    client.DefaultRequestHeaders.Clear();
-            //    //Define request data format  
-            //    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                string oRuta = service.CalcularRutaSistema(systemCode);
+                string filename = string.Empty;
+                byte[] oFileToSave = null;
+                filename = Path.GetFileName(url);
+                filename = filename.Substring(0, filename.IndexOf(".")) + ".pdf";
 
-            //    //Sending request to find web api REST service resource GetAllEmployees using HttpClient  
-            //    HttpResponseMessage Res = client.GetAsync("apiAnses/proveedor.php?cuit=30-50009859-3").Result;
+                Guid oGuid_A_Traer;
 
-            //    //Checking the response is successful or not which is sent using HttpClient  
-            //    if (Res.IsSuccessStatusCode)
-            //    {
-            //        //Storing the response details recieved from web api   
-            //        var EmpResponse = Res.Content.ReadAsStringAsync().Result;
+                DigiWeb.EDocumentoOriginal oEDocumentoOriginal = new DigiWeb.EDocumentoOriginal();
+                oEDocumentoOriginal.Id = Guid.NewGuid();
+                oEDocumentoOriginal.CodigoSistema = systemCode;
+                oEDocumentoOriginal.TipoEDocumentoId = 1054;
+                oEDocumentoOriginal.EstadoEDocumentoId = 1;
+                oEDocumentoOriginal.Entidad = "0";
+                oEDocumentoOriginal.PreCuil = 0;
+                oEDocumentoOriginal.NumeroDocumento = "0";
+                oEDocumentoOriginal.DigitoVerificador = 0;
+                oEDocumentoOriginal.TipoTramite = 0;
+                oEDocumentoOriginal.Secuencia = 0;
+                oEDocumentoOriginal.Nombre = filename;
+                oEDocumentoOriginal.Ruta = oRuta + "\\" + filename;
+                oEDocumentoOriginal.FechaIndexacion = DateTime.Now;
 
-            //        //Deserializing the response recieved from web api and storing into the Employee list  
-            //        response = JsonConvert.DeserializeObject<Certificado>(EmpResponse);
+                service.GuardarEDocumentoV2(oEDocumentoOriginal);
 
-            //    }
-            //    //returning the employee list to view  
-            //    return response;
-            //}
+                oGuid_A_Traer = oEDocumentoOriginal.Id;
 
+                string content = string.Empty;
+
+                WebProxy proxy = Funciones.CrearProxy();
+
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3 |
+                                                       SecurityProtocolType.Tls | SecurityProtocolType.Tls11;
+
+                ServicePointManager.ServerCertificateValidationCallback += RemoteCertificateValidationCallback;
+
+                HttpWebRequest request = WebRequest.Create(new Uri(url)) as HttpWebRequest;
+
+                request.Method = "GET";
+                request.KeepAlive = true;
+                request.PreAuthenticate = true;
+                request.AuthenticationLevel = AuthenticationLevel.MutualAuthRequested;
+                request.Proxy = proxy;
+                request.Credentials = CredentialCache.DefaultCredentials;
+
+                WebResponse response = (HttpWebResponse)request.GetResponse();
+
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    oFileToSave = reader.CurrentEncoding.GetBytes(reader.ReadToEnd());
+                }
+
+                File.WriteAllBytes(oRuta + "\\" + filename, oFileToSave);
+
+                var oEDocumentoSubido = service.TraerEDocumento(oGuid_A_Traer);
+
+                if (oEDocumentoSubido != null)
+                {
+                    Id = Convert.ToString(oGuid_A_Traer);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return Id;
         }
 
-        private string oRta = "";
-        private string oRuta = "";
-        //protected string UploadFile()
+
+        //protected string UploadFile()filename
         //{
         //    log.Debug("AltaFectura.ascx.cs - UploadFile() - Inicio.");
         //    if (oRta != string.Empty)
