@@ -1,0 +1,404 @@
+2019-08-30 12:23:36,752 [26] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-30 12:24:44,244 [26] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>prove</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:24:44,341 [26] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\prove\2019\08\30</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:24:45,230 [26] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>2445ca41-bf83-4f15-be65-8c21fadb67c7</Id>
+        <CodigoSistema>prove</CodigoSistema>
+        <TipoEDocumentoId>1063</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <CodigoExterno>0</CodigoExterno>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\prove\2019\08\30\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-30T12:24:45.2252108-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:24:45,356 [26] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:24:47,523 [26] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumento xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documentoId>2445ca41-bf83-4f15-be65-8c21fadb67c7</documentoId>
+    </TraerEDocumento>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:24:47,651 [26] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumentoResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <TraerEDocumentoResult>
+        <Id>2445ca41-bf83-4f15-be65-8c21fadb67c7</Id>
+        <CodigoSistema>prove</CodigoSistema>
+        <TipoEDocumentoId>1063</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>000</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>00000000</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <CodigoExterno>0</CodigoExterno>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\ANSESDIGI\ARQNAS\PDFs\prove\2019\08\30\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-30T12:24:45.697</FechaIndexacion>
+        <Hash />
+      </TraerEDocumentoResult>
+    </TraerEDocumentoResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:24:49,237 [26] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>prove</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:24:49,271 [26] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\prove\2019\08\30</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:24:50,466 [26] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>9fc1e270-5834-43d0-b297-3bdb3647658c</Id>
+        <CodigoSistema>prove</CodigoSistema>
+        <TipoEDocumentoId>1063</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <CodigoExterno>0</CodigoExterno>
+        <Nombre>587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\prove\2019\08\30\587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Ruta>
+        <FechaIndexacion>2019-08-30T12:24:50.4642108-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:24:50,522 [26] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:24:52,906 [26] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumento xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documentoId>9fc1e270-5834-43d0-b297-3bdb3647658c</documentoId>
+    </TraerEDocumento>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:24:52,944 [26] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumentoResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <TraerEDocumentoResult>
+        <Id>9fc1e270-5834-43d0-b297-3bdb3647658c</Id>
+        <CodigoSistema>prove</CodigoSistema>
+        <TipoEDocumentoId>1063</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>000</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>00000000</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <CodigoExterno>0</CodigoExterno>
+        <Nombre>587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Nombre>
+        <Ruta>\\ANSESDIGI\ARQNAS\PDFs\prove\2019\08\30\587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Ruta>
+        <FechaIndexacion>2019-08-30T12:24:50.907</FechaIndexacion>
+        <Hash />
+      </TraerEDocumentoResult>
+    </TraerEDocumentoResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:24:57,531 [26] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <consultarPadronResponse xmlns="https://anses.gov.ar/ws/renappo">
+      <consultarPadronResult>
+        <IT_Detalle>
+          <RazonSocial>VÍA PUBLICA CLAN S.A.</RazonSocial>
+          <Intermediario>CLAN</Intermediario>
+          <Habilitado>Si</Habilitado>
+          <FechaVigenciaDesde>25/06/2019</FechaVigenciaDesde>
+          <FechaVigenciaHasta>22/12/2019</FechaVigenciaHasta>
+          <Tarifario>2445ca41-bf83-4f15-be65-8c21fadb67c7</Tarifario>
+          <CoberturaGeografica>9fc1e270-5834-43d0-b297-3bdb3647658c</CoberturaGeografica>
+        </IT_Detalle>
+        <IT_Actividad>
+          <Actividad>MEDIOS</Actividad>
+          <Fecha>25/06/2019</Fecha>
+          <Vencimiento>22/12/2019</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+        <IT_Actividad>
+          <Actividad>COMERCIALIZADORA</Actividad>
+          <Fecha>25/06/2019</Fecha>
+          <Vencimiento>22/12/2019</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+      </consultarPadronResult>
+    </consultarPadronResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:36:17,759 [36] INFO  Renappo [(null)] - Consulta SAP - Servicio : 
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ren="https://anses.gov.ar/ws/renappo">
+  <soapenv:Header />
+  <soapenv:Body>
+    <ren:consultarPadron>
+      <!--Optional:-->
+      <ren:CUIT>30598956622</ren:CUIT>
+    </ren:consultarPadron>
+  </soapenv:Body>
+</soapenv:Envelope>
+2019-08-30 12:36:26,451 [36] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>prove</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:36:26,502 [36] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\prove\2019\08\30</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:36:27,550 [36] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>fc23704f-dac8-4bf9-b862-6161cfd92792</Id>
+        <CodigoSistema>prove</CodigoSistema>
+        <TipoEDocumentoId>1063</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <CodigoExterno>0</CodigoExterno>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\prove\2019\08\30\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-30T12:36:27.5482108-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:36:27,658 [36] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:36:31,225 [36] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumento xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documentoId>fc23704f-dac8-4bf9-b862-6161cfd92792</documentoId>
+    </TraerEDocumento>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:36:31,263 [36] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumentoResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <TraerEDocumentoResult>
+        <Id>fc23704f-dac8-4bf9-b862-6161cfd92792</Id>
+        <CodigoSistema>prove</CodigoSistema>
+        <TipoEDocumentoId>1063</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>000</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>00000000</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <CodigoExterno>0</CodigoExterno>
+        <Nombre>5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Nombre>
+        <Ruta>\\ANSESDIGI\ARQNAS\PDFs\prove\2019\08\30\5ceff2c12c3c3-CUADRO-TARIFARIO-ACTUALIZADO.pdf</Ruta>
+        <FechaIndexacion>2019-08-30T12:36:28.023</FechaIndexacion>
+        <Hash />
+      </TraerEDocumentoResult>
+    </TraerEDocumentoResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:37:14,656 [36] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistema xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <codigoSistema>prove</codigoSistema>
+    </CalcularRutaSistema>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:37:14,668 [36] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CalcularRutaSistemaResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <CalcularRutaSistemaResult>\\10.8.10.68\ARQNAS\PDFs\prove\2019\08\30</CalcularRutaSistemaResult>
+    </CalcularRutaSistemaResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:37:14,669 [36] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2 xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documento>
+        <Id>b833c617-5530-4df4-8ae9-009b213cc87b</Id>
+        <CodigoSistema>prove</CodigoSistema>
+        <TipoEDocumentoId>1063</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>0</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>0</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <CodigoExterno>0</CodigoExterno>
+        <Nombre>587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Nombre>
+        <Ruta>\\10.8.10.68\ARQNAS\PDFs\prove\2019\08\30\587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Ruta>
+        <FechaIndexacion>2019-08-30T12:37:14.6692108-03:00</FechaIndexacion>
+      </documento>
+    </GuardarEDocumentoV2>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:37:14,742 [36] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GuardarEDocumentoV2Response xmlns="http://Anses.gov.ar/DigitalizacionServicios/" />
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:37:15,625 [36] INFO  Renappo [(null)] - Consulta Servicio - Renappo : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumento xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <documentoId>b833c617-5530-4df4-8ae9-009b213cc87b</documentoId>
+    </TraerEDocumento>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:37:15,655 [36] INFO  Renappo [(null)] - Respuesta Renappo - Servicio : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <TraerEDocumentoResponse xmlns="http://Anses.gov.ar/DigitalizacionServicios/">
+      <TraerEDocumentoResult>
+        <Id>b833c617-5530-4df4-8ae9-009b213cc87b</Id>
+        <CodigoSistema>prove</CodigoSistema>
+        <TipoEDocumentoId>1063</TipoEDocumentoId>
+        <EstadoEDocumentoId>1</EstadoEDocumentoId>
+        <Entidad>000</Entidad>
+        <PreCuil>0</PreCuil>
+        <NumeroDocumento>00000000</NumeroDocumento>
+        <DigitoVerificador>0</DigitoVerificador>
+        <TipoTramite>0</TipoTramite>
+        <Secuencia>0</Secuencia>
+        <CodigoExterno>0</CodigoExterno>
+        <Nombre>587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Nombre>
+        <Ruta>\\ANSESDIGI\ARQNAS\PDFs\prove\2019\08\30\587cec1eaead8-ÁMBITO-GEOGRÁFICO-COBERTURA.pdf</Ruta>
+        <FechaIndexacion>2019-08-30T12:37:15.137</FechaIndexacion>
+        <Hash />
+      </TraerEDocumentoResult>
+    </TraerEDocumentoResponse>
+  </soap:Body>
+</soap:Envelope>
+2019-08-30 12:37:15,656 [36] INFO  Renappo [(null)] - Respuesta Servicio - SAP : 
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <consultarPadronResponse xmlns="https://anses.gov.ar/ws/renappo">
+      <consultarPadronResult>
+        <IT_Detalle>
+          <RazonSocial>VÍA PUBLICA CLAN S.A.</RazonSocial>
+          <Intermediario>CLAN</Intermediario>
+          <Habilitado>Si</Habilitado>
+          <FechaVigenciaDesde>25/06/2019</FechaVigenciaDesde>
+          <FechaVigenciaHasta>22/12/2019</FechaVigenciaHasta>
+          <Tarifario>fc23704f-dac8-4bf9-b862-6161cfd92792</Tarifario>
+          <CoberturaGeografica>b833c617-5530-4df4-8ae9-009b213cc87b</CoberturaGeografica>
+        </IT_Detalle>
+        <IT_Actividad>
+          <Actividad>MEDIOS</Actividad>
+          <Fecha>25/06/2019</Fecha>
+          <Vencimiento>22/12/2019</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+        <IT_Actividad>
+          <Actividad>COMERCIALIZADORA</Actividad>
+          <Fecha>25/06/2019</Fecha>
+          <Vencimiento>22/12/2019</Vencimiento>
+          <Certificado>De conformidad con lo establecido en las Resoluciones N° 247/2016 y N° 446/2016
+                de la Secretaría de Comunicación Pública, se extiende a
+                 VÍA PUBLICA CLAN S.A.,
+                CUIT 30-59895662-2, Proveedor Nro 2, el presente certificado habilitante
+                como Proveedor del Registro Nacional de Proveedores de Publicidad Oficial - RENAPPO.-</Certificado>
+        </IT_Actividad>
+      </consultarPadronResult>
+    </consultarPadronResponse>
+  </soap:Body>
+</soap:Envelope>

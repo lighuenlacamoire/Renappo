@@ -32,8 +32,6 @@ namespace X7Renappo.Negocio
         {
             cuit = Funciones.ConvertToCUIT(cuit);
 
-            WebProxy proxy = Funciones.CrearProxy();
-
             Certificacion[] certificaciones = new Certificacion[0];
             Proveedor proveedor = new Proveedor();
 
@@ -42,16 +40,7 @@ namespace X7Renappo.Negocio
 
             ServicePointManager.ServerCertificateValidationCallback += RemoteCertificateValidationCallback;
 
-            HttpWebRequest request = WebRequest.Create(new Uri("https://renappo.argentina.gob.ar/apiAnses/proveedor.php?cuit=" + cuit)) as HttpWebRequest;
-
-            request.ContentType = "application/json; charset=utf-8";
-            request.Accept = "application/json";
-            request.Method = "GET";
-            request.KeepAlive = true;
-            request.PreAuthenticate = true;
-            request.AuthenticationLevel = AuthenticationLevel.MutualAuthRequested;
-            request.Proxy = proxy;
-            request.Credentials = CredentialCache.DefaultCredentials;
+            HttpWebRequest request = Funciones.GenerarRequest("https://renappo.argentina.gob.ar/apiAnses/proveedor.php?cuit=" + cuit);
 
             string content = string.Empty;
 
@@ -130,20 +119,22 @@ namespace X7Renappo.Negocio
 
             return proveedor;
         }
-        
+
         private string SubirArchivo(string url)
         {
             string Id = string.Empty;
             try
             {
                 string digiwebEndpoint = ConfigurationManager.AppSettings["DigiWebEndpoint"];
-                string systemCode = ConfigurationManager.AppSettings["SystemCode"];
+                string digiDocCodigoSistema = ConfigurationManager.AppSettings["DigiDocCodigoSistema"];
+                string digiDocCodigoExterno = ConfigurationManager.AppSettings["DigiDocCodigoExterno"];
+                string digiDocCodigoId = ConfigurationManager.AppSettings["DigiDocCodigoId"];
 
                 DigiWeb.DigitalizacionServicio service = new DigiWeb.DigitalizacionServicio();
                 service.Credentials = CredentialCache.DefaultCredentials;
                 service.Url = digiwebEndpoint;
 
-                string oRuta = service.CalcularRutaSistema(systemCode);
+                string oRuta = service.CalcularRutaSistema(digiDocCodigoSistema);
                 string filename = string.Empty;
                 byte[] oFileToSave = null;
                 filename = Path.GetFileName(url);
@@ -153,8 +144,8 @@ namespace X7Renappo.Negocio
 
                 DigiWeb.EDocumentoOriginal oEDocumentoOriginal = new DigiWeb.EDocumentoOriginal();
                 oEDocumentoOriginal.Id = Guid.NewGuid();
-                oEDocumentoOriginal.CodigoSistema = systemCode;
-                oEDocumentoOriginal.TipoEDocumentoId = 1054;
+                oEDocumentoOriginal.CodigoSistema = digiDocCodigoSistema;
+                oEDocumentoOriginal.TipoEDocumentoId = Convert.ToInt32(digiDocCodigoId);
                 oEDocumentoOriginal.EstadoEDocumentoId = 1;
                 oEDocumentoOriginal.Entidad = "0";
                 oEDocumentoOriginal.PreCuil = 0;
@@ -165,6 +156,7 @@ namespace X7Renappo.Negocio
                 oEDocumentoOriginal.Nombre = filename;
                 oEDocumentoOriginal.Ruta = oRuta + "\\" + filename;
                 oEDocumentoOriginal.FechaIndexacion = DateTime.Now;
+                oEDocumentoOriginal.CodigoExterno = digiDocCodigoExterno;
 
                 service.GuardarEDocumentoV2(oEDocumentoOriginal);
 
@@ -172,22 +164,13 @@ namespace X7Renappo.Negocio
 
                 string content = string.Empty;
 
-                WebProxy proxy = Funciones.CrearProxy();
-
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3 |
                                                        SecurityProtocolType.Tls | SecurityProtocolType.Tls11;
 
                 ServicePointManager.ServerCertificateValidationCallback += RemoteCertificateValidationCallback;
 
-                HttpWebRequest request = WebRequest.Create(new Uri(url)) as HttpWebRequest;
-
-                request.Method = "GET";
-                request.KeepAlive = true;
-                request.PreAuthenticate = true;
-                request.AuthenticationLevel = AuthenticationLevel.MutualAuthRequested;
-                request.Proxy = proxy;
-                request.Credentials = CredentialCache.DefaultCredentials;
-
+                HttpWebRequest request = Funciones.GenerarRequest(url);
+                
                 WebResponse response = (HttpWebResponse)request.GetResponse();
 
                 using (StreamReader reader = new StreamReader(response.GetResponseStream()))

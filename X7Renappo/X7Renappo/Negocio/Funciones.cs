@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Net;
+using System.Net.Security;
 using System.Text.RegularExpressions;
 using System.Web;
 
@@ -10,6 +11,21 @@ namespace X7Renappo.Negocio
 {
     public static class Funciones
     {
+        public static HttpWebRequest GenerarRequest(string endpoint)
+        {
+            HttpWebRequest request = WebRequest.Create(new Uri(endpoint)) as HttpWebRequest;
+
+            //request.ContentType = "application/json; charset=utf-8";
+            //request.Accept = "application/json";
+            request.Method = "GET";
+            request.KeepAlive = true;
+            request.PreAuthenticate = true;
+            request.AuthenticationLevel = AuthenticationLevel.MutualAuthRequested;
+            request.Proxy = CrearProxy();
+            request.Credentials = CredentialCache.DefaultCredentials;
+
+            return request;
+        }
         public static WebProxy CrearProxy()
         {
             string usuarioProxy = ConfigurationManager.AppSettings["CPA_Proxy_Usuario"];
