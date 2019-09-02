@@ -19,7 +19,7 @@ namespace X7Renappo.Configuraciones
 {
     public class SoapLoggerExtension : SoapExtension
     {
-        private static readonly ILog log = LogManager.GetLogger("Renappo");
+        private static readonly ILog log = LogManager.GetLogger("X7-Prove - ConsultaPadron: ");
 
         /// <summary>
         /// The old stream coming into this extension when we make a soap request.  See ChainStream.

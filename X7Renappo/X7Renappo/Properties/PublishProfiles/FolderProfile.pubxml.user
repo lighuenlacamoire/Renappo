@@ -79,10 +79,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>08/27/2019 15:53:32</publishTime>
+      <publishTime>09/02/2019 11:47:12</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>08/27/2019 15:53:31</publishTime>
+      <publishTime>09/02/2019 11:47:11</publishTime>
     </File>
     <File Include="bin/BouncyCastle.Crypto.dll">
       <publishTime>08/17/2017 18:20:54</publishTime>
@@ -256,13 +256,13 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>01/23/2014 13:57:34</publishTime>
     </File>
     <File Include="bin/X7Renappo.dll">
-      <publishTime>08/27/2019 15:53:00</publishTime>
+      <publishTime>09/02/2019 11:46:09</publishTime>
     </File>
     <File Include="bin/X7Renappo.pdb">
-      <publishTime>08/27/2019 15:53:00</publishTime>
+      <publishTime>09/02/2019 11:46:09</publishTime>
     </File>
     <File Include="bin/X7Renappo.XmlSerializers.dll">
-      <publishTime>08/27/2019 15:53:12</publishTime>
+      <publishTime>09/02/2019 11:46:27</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>07/26/2019 12:37:55</publishTime>
@@ -271,7 +271,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>07/26/2019 12:51:05</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>08/27/2019 15:53:17</publishTime>
+      <publishTime>09/02/2019 11:46:42</publishTime>
     </File>
     <File Include="Web References/DigiWeb/EDocumento.datasource">
       <publishTime>08/22/2019 13:22:11</publishTime>
@@ -289,7 +289,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/22/2019 13:22:11</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/27/2019 15:41:01</publishTime>
+      <publishTime>09/02/2019 11:46:32</publishTime>
     </File>
     <File Include="X7CPRenappo.asmx">
       <publishTime>08/22/2019 16:59:53</publishTime>

@@ -21,7 +21,7 @@ namespace X7Renappo.Negocio
 {
     public class Recursos
     {
-        private static readonly ILog log = LogManager.GetLogger("obtenerCertificado");
+        private static readonly ILog log = LogManager.GetLogger("X7-Prove - ConsultaPadron: ");
 
         public Recursos()
         {
@@ -30,6 +30,7 @@ namespace X7Renappo.Negocio
 
         public Proveedor consultarPadron(string cuit)
         {
+            log.Info("Cuit Ingresado " + cuit);
             cuit = Funciones.ConvertToCUIT(cuit);
 
             Certificacion[] certificaciones = new Certificacion[0];
@@ -40,7 +41,11 @@ namespace X7Renappo.Negocio
 
             ServicePointManager.ServerCertificateValidationCallback += RemoteCertificateValidationCallback;
 
-            HttpWebRequest request = Funciones.GenerarRequest("https://renappo.argentina.gob.ar/apiAnses/proveedor.php?cuit=" + cuit);
+            string WSApiEndpoint = ConfigurationManager.AppSettings["WS_ApiEndpoint"];
+            string WSApiParameter = ConfigurationManager.AppSettings["WS_ApiParameter"];
+
+            log.Info("Invocacion al Endpoint de Renappo " + WSApiEndpoint + " con el siguiente parametro y valor " + WSApiParameter + "=" + cuit);
+            HttpWebRequest request = Funciones.GenerarRequest(WSApiEndpoint + "?" + WSApiParameter + "=" + cuit);
 
             string content = string.Empty;
 
@@ -54,6 +59,9 @@ namespace X7Renappo.Negocio
                     content = reader.ReadToEnd();
                 }
 
+                log.Info("Respuesta del Endpoint " + WSApiEndpoint + ": " + Environment.NewLine + content);
+
+                log.Info("Parseando el la respuesta previamente obtenida");
                 certificaciones = JsonConvert.DeserializeObject<Certificacion[]>(content);
 
                 if (certificaciones != null && certificaciones.Any())
@@ -74,6 +82,7 @@ namespace X7Renappo.Negocio
 
                         if (!string.IsNullOrEmpty(certificacion.Certificado))
                         {
+                            log.Info("Parseando el campo certificado para obtener la/s actividad/es del Proveedor");
                             var elementos = XElement.Parse(certificacion.Certificado);
 
                             if (elementos.HasElements)
@@ -101,6 +110,7 @@ namespace X7Renappo.Negocio
             }
             catch (WebException exp)
             {
+                log.Error("Fallo el servicio");
                 if (exp.Response != null)
                 {
                     using (StreamReader sr = new StreamReader(exp.Response.GetResponseStream()))
@@ -113,6 +123,7 @@ namespace X7Renappo.Negocio
                 {
                     content = exp.Message;
                 }
+                log.Error("Motivo del fallo del servicio: "+content);
 
                 throw new Exception(content);
             }
@@ -125,6 +136,29 @@ namespace X7Renappo.Negocio
             string Id = string.Empty;
             try
             {
+
+                string content = string.Empty;
+                byte[] oFileToSave = null;
+
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3 |
+                                                       SecurityProtocolType.Tls | SecurityProtocolType.Tls11;
+
+                ServicePointManager.ServerCertificateValidationCallback += RemoteCertificateValidationCallback;
+
+                log.Info("Se descargara el certificado con la siguiente url " + url);
+                HttpWebRequest request = Funciones.GenerarRequest(url);
+
+                log.Info("Invocando a la descarga del archivo con la siguiente url " + url);
+                WebResponse response = (HttpWebResponse)request.GetResponse();
+
+                log.Info("Obteniendo la respuesta del Endpoint " + url);
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    oFileToSave = reader.CurrentEncoding.GetBytes(reader.ReadToEnd());
+                }
+
+                log.Info("Iniciando Configuracion de Digiweb para subir el archivo previamente descargado");
+
                 string digiwebEndpoint = ConfigurationManager.AppSettings["DigiWebEndpoint"];
                 string digiDocCodigoSistema = ConfigurationManager.AppSettings["DigiDocCodigoSistema"];
                 string digiDocCodigoExterno = ConfigurationManager.AppSettings["DigiDocCodigoExterno"];
@@ -134,9 +168,9 @@ namespace X7Renappo.Negocio
                 service.Credentials = CredentialCache.DefaultCredentials;
                 service.Url = digiwebEndpoint;
 
+                log.Info("Invocando a Digiweb para obtener la ruta de subida del archivo");
                 string oRuta = service.CalcularRutaSistema(digiDocCodigoSistema);
                 string filename = string.Empty;
-                byte[] oFileToSave = null;
                 filename = Path.GetFileName(url);
                 filename = filename.Substring(0, filename.IndexOf(".")) + ".pdf";
 
@@ -158,37 +192,27 @@ namespace X7Renappo.Negocio
                 oEDocumentoOriginal.FechaIndexacion = DateTime.Now;
                 oEDocumentoOriginal.CodigoExterno = digiDocCodigoExterno;
 
+                log.Info("Invocando a Digiweb para la subida logica del archivo");
                 service.GuardarEDocumentoV2(oEDocumentoOriginal);
 
                 oGuid_A_Traer = oEDocumentoOriginal.Id;
 
-                string content = string.Empty;
-
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3 |
-                                                       SecurityProtocolType.Tls | SecurityProtocolType.Tls11;
-
-                ServicePointManager.ServerCertificateValidationCallback += RemoteCertificateValidationCallback;
-
-                HttpWebRequest request = Funciones.GenerarRequest(url);
-                
-                WebResponse response = (HttpWebResponse)request.GetResponse();
-
-                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
-                {
-                    oFileToSave = reader.CurrentEncoding.GetBytes(reader.ReadToEnd());
-                }
-
+                log.Info("Inicio subida fisica del archivo nombre " + filename + " a la siguiente ruta " + oRuta);
                 File.WriteAllBytes(oRuta + "\\" + filename, oFileToSave);
 
+                log.Info("Invocando a Digiweb para verificar que se haya hecho la subida del archivo");
                 var oEDocumentoSubido = service.TraerEDocumento(oGuid_A_Traer);
 
                 if (oEDocumentoSubido != null)
                 {
                     Id = Convert.ToString(oGuid_A_Traer);
+                    log.Info("Se ha subido el archivo de nombre " + filename + " con el Id " + Id);
                 }
             }
             catch (Exception ex)
             {
+                log.Error("Fallo la subida del archivo de la url "+ url);
+                log.Error("Motivo del fallo: "+ex.Message);
                 Console.WriteLine(ex.Message);
             }
 
